@@ -1,0 +1,279 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #0B7285;
+  --color-secondary: #14B8A6;
+  --color-accent: #D9F99D;
+  --color-bgColor: #F8FAFC;
+  --color-textColor: #1E293B;
+  --font-family-heading: 'Playfair Display', serif;
+  --font-family-body: 'Inter', sans-serif;
+}
+
+/* ── Base ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-family-body);
+  background-color: var(--color-bgColor);
+  color: var(--color-textColor);
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+h1, h2, h3 { font-family: var(--font-family-heading); }
+
+/* ── Dark mode overrides ───────────────────────────────────────────── */
+html.dark {
+  --color-bgColor: #0f172a;
+  --color-textColor: #e2e8f0;
+}
+
+/* Base */
+html.dark body { background-color: #0f172a; color: #e2e8f0; }
+
+/* ── Scrollbar ── */
+html.dark ::-webkit-scrollbar-track { background: #1e293b; }
+
+/* ── Cards ── */
+html.dark .card {
+  background-color: #1e293b;
+  border-color: #334155;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.4);
+}
+
+/* ── Sections & backgrounds ── */
+html.dark .bg-white       { background-color: #1e293b !important; }
+html.dark .bg-slate-50    { background-color: #1e2d3d !important; }
+html.dark .bg-slate-100   { background-color: #243044 !important; }
+html.dark .bg-bgColor     { background-color: #0f172a !important; }
+
+/* ── Borders ── */
+html.dark .border-slate-100  { border-color: #334155 !important; }
+html.dark .border-slate-200  { border-color: #334155 !important; }
+html.dark .border-slate-300  { border-color: #475569 !important; }
+
+/* ── Text colours ── */
+html.dark .text-slate-800  { color: #f1f5f9 !important; }
+html.dark .text-slate-700  { color: #e2e8f0 !important; }
+html.dark .text-slate-600  { color: #cbd5e1 !important; }
+html.dark .text-slate-500  { color: #94a3b8 !important; }
+html.dark .text-slate-400  { color: #64748b !important; }
+
+/* ── FAQ items ── */
+html.dark .border.border-slate-200.rounded-xl {
+  background-color: #1e293b;
+  border-color: #334155 !important;
+}
+html.dark .border.border-slate-200.rounded-xl button {
+  color: #f1f5f9;
+}
+html.dark .border.border-slate-200.rounded-xl button:hover {
+  background-color: #243044 !important;
+}
+html.dark .border.border-slate-200.rounded-xl .border-t {
+  border-color: #334155;
+}
+html.dark .border.border-slate-200.rounded-xl .text-slate-600 {
+  color: #cbd5e1 !important;
+}
+
+/* ── Feature / How It Works step cards ── */
+html.dark .bg-green-50   { background-color: #14291f !important; }
+html.dark .bg-yellow-50  { background-color: #29220d !important; }
+html.dark .bg-orange-50  { background-color: #291b0d !important; }
+html.dark .bg-red-50     { background-color: #291313 !important; }
+html.dark .bg-red-100    { background-color: #331a1a !important; }
+html.dark .bg-blue-50    { background-color: #0d1f2e !important; }
+html.dark .bg-indigo-50  { background-color: #111827 !important; }
+html.dark .bg-teal-50    { background-color: #0d2229 !important; }
+
+/* ── Stat/info boxes in cards ── */
+html.dark .bg-primary\/5  { background-color: rgba(11,114,133,0.2) !important; }
+html.dark .bg-primary\/10 { background-color: rgba(11,114,133,0.25) !important; }
+
+/* ── How It Works step connector line ── */
+html.dark .bg-slate-200 { background-color: #334155 !important; }
+
+/* ── Tables ── */
+html.dark table { background-color: transparent; }
+html.dark thead tr { border-color: #334155 !important; }
+html.dark tbody tr { border-color: #1e293b !important; }
+html.dark tbody tr:hover { background-color: #243044 !important; }
+
+/* ── Disclaimer / alert banners ── */
+html.dark .bg-amber-50  { background-color: #292310 !important; }
+html.dark .border-amber-200 { border-color: #78560a !important; }
+html.dark .text-amber-800   { color: #fbbf24 !important; }
+html.dark .text-amber-700   { color: #f59e0b !important; }
+html.dark .bg-red-50.border-red-200 {
+  background-color: #2a1010 !important;
+  border-color: #7f1d1d !important;
+}
+
+/* ── Inputs & forms ── */
+html.dark .input-field {
+  background-color: #1e293b;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+html.dark .input-field::placeholder { color: #64748b; }
+html.dark input[type="text"],
+html.dark input[type="email"],
+html.dark input[type="password"],
+html.dark input[type="tel"],
+html.dark input[type="number"],
+html.dark select,
+html.dark textarea {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+  color: #e2e8f0 !important;
+}
+
+/* ── Buttons ── */
+html.dark .btn-secondary {
+  background-color: #1e293b;
+  color: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+html.dark .btn-secondary:hover { background-color: var(--color-primary); color: white; }
+
+/* ── Badges in dark ── */
+html.dark .badge-low     { background-color: #14291f; color: #4ade80; }
+html.dark .badge-medium  { background-color: #29220d; color: #fbbf24; }
+html.dark .badge-high    { background-color: #291b0d; color: #fb923c; }
+html.dark .badge-critical{ background-color: #291313; color: #f87171; }
+
+/* ── DR stage colour boxes (used in result panels) ── */
+html.dark [class*="text-green-700"][class*="bg-green-50"]  { background-color: #14291f !important; }
+html.dark [class*="text-yellow-700"][class*="bg-yellow-50"]{ background-color: #29220d !important; }
+html.dark [class*="text-orange-700"][class*="bg-orange-50"]{ background-color: #291b0d !important; }
+html.dark [class*="text-red-700"][class*="bg-red-50"]      { background-color: #291313 !important; }
+html.dark [class*="text-red-900"][class*="bg-red-100"]     { background-color: #331a1a !important; }
+
+/* ── Overflow / modal backdrops ── */
+html.dark .overflow-hidden.rounded-2xl { background-color: #1e293b; }
+
+/* ── Dividers ── */
+html.dark hr, html.dark .border-t, html.dark .border-b {
+  border-color: #334155;
+}
+
+/* ── Footer ── */
+html.dark footer { background-color: #020617 !important; }
+html.dark footer .text-slate-400 { color: #64748b !important; }
+html.dark footer .border-slate-800 { border-color: #1e293b !important; }
+
+
+/* ── Component classes (custom, since @apply needs utility classes) ── */
+.btn-primary {
+  background-color: var(--color-primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  border: none;
+  display: inline-flex;
+  align-items: center;
+}
+.btn-primary:hover { opacity: 0.9; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1); }
+
+.btn-secondary {
+  background-color: white;
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  display: inline-flex;
+  align-items: center;
+}
+.btn-secondary:hover { background-color: var(--color-primary); color: white; }
+
+.card {
+  background-color: white;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  border: 1px solid #f1f5f9;
+  padding: 1.5rem;
+}
+
+.input-field {
+  width: 100%;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  padding-left: 2.5rem;    /* matches Tailwind pl-10 — room for leading icon */
+  padding-right: 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e2e8f0;
+  background: white;
+  color: #1e293b;
+  outline: none;
+  transition: all 0.2s;
+}
+.input-field:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgb(11 114 133 / 0.1);
+}
+.input-field::placeholder { color: #94a3b8; }
+
+.badge-low    { display:inline-flex;align-items:center;padding:0.25rem 0.75rem;border-radius:9999px;font-size:.875rem;font-weight:500;background-color:#dcfce7;color:#15803d; }
+.badge-medium { display:inline-flex;align-items:center;padding:0.25rem 0.75rem;border-radius:9999px;font-size:.875rem;font-weight:500;background-color:#fef9c3;color:#a16207; }
+.badge-high   { display:inline-flex;align-items:center;padding:0.25rem 0.75rem;border-radius:9999px;font-size:.875rem;font-weight:500;background-color:#ffedd5;color:#c2410c; }
+.badge-critical{ display:inline-flex;align-items:center;padding:0.25rem 0.75rem;border-radius:9999px;font-size:.875rem;font-weight:500;background-color:#fee2e2;color:#b91c1c; }
+
+/* ── Hero gradient ─────────────────────────────────── */
+.hero-gradient {
+  background: linear-gradient(135deg, #0B7285 0%, #14B8A6 50%, #0d9488 100%);
+}
+
+/* ── Retina glow ring animation ────────────────────── */
+@keyframes ringPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(11,114,133,.3); }
+  50%      { box-shadow: 0 0 0 20px rgba(11,114,133,0); }
+}
+.ring-pulse { animation: ringPulse 2.5s ease-in-out infinite; }
+
+/* ── Float animation ───────────────────────────────── */
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+.float-anim { animation: float 4s ease-in-out infinite; }
+
+/* ── Confidence bar transition ─────────────────────── */
+.confidence-bar-fill { transition: width 1s ease-in-out; }
+
+/* ── Custom scrollbar ──────────────────────────────── */
+::-webkit-scrollbar       { width: 6px; }
+::-webkit-scrollbar-track { background: #F8FAFC; }
+::-webkit-scrollbar-thumb { background: #14B8A6; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #0B7285; }
+
+/* ── Shimmer text animation ────────────────────────── */
+@keyframes shimmer {
+  0%   { background-position: 200% center; }
+  100% { background-position: -200% center; }
+}
+
+/* ── Glow pulse for hero accent words ──────────────── */
+@keyframes glow-pulse {
+  0%, 100% { text-shadow: 0 0 8px rgba(20, 184, 166, 0.4); }
+  50%       { text-shadow: 0 0 24px rgba(20, 184, 166, 0.8), 0 0 40px rgba(11, 114, 133, 0.4); }
+}
+.glow-text { animation: glow-pulse 2.5s ease-in-out infinite; }
+
+/* ── Gradient animated text ────────────────────────── */
+.gradient-animated-text {
+  background: linear-gradient(90deg, #0B7285 0%, #14B8A6 40%, #D9F99D 60%, #0B7285 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
