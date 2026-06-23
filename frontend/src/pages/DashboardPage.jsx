@@ -142,7 +142,7 @@ function ScanRow({ scan, onDelete, onDownload }) {
   const idx = DR_INDEX[scan.prediction_class] ?? 0;
   const [deleting, setDeleting] = useState(false);
   const [downloading, setDownloading] = useState(false);
-  const BACKEND_URL = 'http://localhost:8000';
+  const BACKEND_URL = 'https://dr-detection-lhhi.onrender.com';
 
   const handleDelete = async () => {
     if (!confirm('Delete this scan record and associated files?')) return;

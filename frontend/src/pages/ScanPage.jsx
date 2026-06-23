@@ -45,7 +45,7 @@ export default function ScanPage() {
   const fileInputRef = useRef(null);
   const navigate = useNavigate();
 
-  const BACKEND_URL = 'http://localhost:8000';
+  const BACKEND_URL = 'https://dr-detection-lhhi.onrender.com';
 
   const handleFileSelect = (selectedFile) => {
     setError('');
@@ -182,11 +182,10 @@ export default function ScanPage() {
                   onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
                   onDragLeave={() => setIsDragging(false)}
                   onClick={() => fileInputRef.current?.click()}
-                  className={`border-2 border-dashed rounded-2xl p-12 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 ${
-                    isDragging
-                      ? 'border-primary bg-primary/5 scale-[1.02]'
-                      : 'border-slate-200 hover:border-primary hover:bg-primary/5'
-                  }`}
+                  className={`border-2 border-dashed rounded-2xl p-12 flex flex-col items-center justify-center cursor-pointer transition-all duration-300 ${isDragging
+                    ? 'border-primary bg-primary/5 scale-[1.02]'
+                    : 'border-slate-200 hover:border-primary hover:bg-primary/5'
+                    }`}
                 >
                   <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4">
                     <Eye className="w-8 h-8 text-primary" />
@@ -449,11 +448,10 @@ export default function ScanPage() {
                             <button
                               key={v}
                               onClick={() => setHeatmapView(v)}
-                              className={`px-2 py-1 text-xs rounded-lg transition-all ${
-                                heatmapView === v
-                                  ? 'bg-primary text-white'
-                                  : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
-                              }`}
+                              className={`px-2 py-1 text-xs rounded-lg transition-all ${heatmapView === v
+                                ? 'bg-primary text-white'
+                                : 'bg-slate-100 text-slate-500 hover:bg-slate-200'
+                                }`}
                             >
                               {v === 'side-by-side' ? 'Both' : v.charAt(0).toUpperCase() + v.slice(1)}
                             </button>

@@ -148,7 +148,7 @@ export default function LandingPage() {
   const [heatmapView, setHeatmapView] = useState('side-by-side');
   const [downloadingPdf, setDownloadingPdf] = useState(false);
   const fileInputRef = useRef(null);
-  const BACKEND_URL = 'http://localhost:8000';
+  const BACKEND_URL = 'https://dr-detection-lhhi.onrender.com';
 
   const handleFileSelect = (selectedFile) => {
     setError('');
